@@ -60,12 +60,13 @@ class IMGKit
 
   def executable
     default = IMGKit.configuration.wkhtmltoimage
-    return default if default !~ /^\// # its not a path, so nothing we can do
-    if File.exist?(default)
-      default
-    else
-      default.split('/').last
-    end
+    return default
+    # return default if default !~ /^\// # its not a path, so nothing we can do
+    # if File.exist?(default)
+    #   default
+    # else
+    #   default.split('/').last
+    # end
   end
 
   if Open3.respond_to? :capture3
